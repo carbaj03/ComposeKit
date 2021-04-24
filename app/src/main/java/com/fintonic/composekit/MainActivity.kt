@@ -25,7 +25,6 @@ class MainActivity : ComponentActivity() {
                     Column(
                         modifier = Modifier.padding(20.dp).fillMaxSize(),
                     ) {
-
                         FintonicButton(
                             onClick = { },
                             text = "Click"
