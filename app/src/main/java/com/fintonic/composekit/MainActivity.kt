@@ -23,9 +23,19 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
                     Column(
-                        modifier = Modifier.padding(20.dp).fillMaxSize(),
+                        modifier = Modifier
+                            .padding(20.dp)
+                            .fillMaxSize(),
                     ) {
-                        FintonicButton(
+                        PrimaryBlueButton(
+                            onClick = { },
+                            text = "Click"
+                        )
+                        PrimaryWhiteButton(
+                            onClick = { },
+                            text = "Click"
+                        )
+                        SecondaryButton(
                             onClick = { },
                             text = "Click"
                         )

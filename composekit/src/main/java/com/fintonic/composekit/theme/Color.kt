@@ -18,3 +18,8 @@ val Pink = Color(0xFFFFD5D7)
 val BabyBlue = Color(0xFFBED5FF)
 val White = Color(0xFFFFFFFF)
 val Black = Color(0xFF000000)
+
+val CloudyGray = Color(0xFFF3F6F9)
+val LightGray = Color(0xFFCFDAE6)
+val Gray = Color(0xFF929FAD)
+val DarkGray = Color(0xFF4B5D72)

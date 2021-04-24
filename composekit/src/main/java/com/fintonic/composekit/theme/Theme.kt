@@ -6,6 +6,14 @@ import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 
+
+private val BrandPalette = lightColors(
+    primary = Blue,
+    secondary = Salmon,
+    surface = White,
+    background = White,
+)
+
 private val DarkColorPalette = darkColors(
     primary = Purple200,
     primaryVariant = Purple700,
@@ -28,11 +36,14 @@ private val LightColorPalette = lightColors(
 )
 
 @Composable
-fun ComposeKitTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
+fun ComposeKitTheme(
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    content: @Composable () -> Unit
+) {
     val colors = if (darkTheme) {
         DarkColorPalette
     } else {
-        LightColorPalette
+        BrandPalette
     }
 
     MaterialTheme(

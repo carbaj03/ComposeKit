@@ -9,7 +9,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.fintonic.composekit.theme.Blue
+import com.fintonic.composekit.theme.*
+import com.fintonic.composekit.theme.White
 
 @Composable
 fun SecondaryButton(
@@ -20,17 +21,21 @@ fun SecondaryButton(
         modifier = Modifier.height(50.dp),
         onClick = onClick,
         shape = RoundedCornerShape(25.dp),
-        colors = ButtonDefaults.buttonColors(backgroundColor = Blue),
+        colors = ButtonDefaults.buttonColors(
+            backgroundColor = Salmon,
+            disabledBackgroundColor = CloudyGray,
+        ),
     ) {
         Text(
             modifier = Modifier.padding(horizontal = 20.dp),
-            text = text
+            text = text,
+            color = White,
         )
     }
 }
 
 @Composable
-fun PrimaryButton(
+fun PrimaryBlueButton(
     onClick: () -> Unit,
     text: String,
 ) {
@@ -38,11 +43,38 @@ fun PrimaryButton(
         modifier = Modifier.height(50.dp),
         onClick = onClick,
         shape = RoundedCornerShape(25.dp),
-        colors = ButtonDefaults.buttonColors(backgroundColor = Blue),
+        colors = ButtonDefaults.buttonColors(
+            backgroundColor = Blue,
+            disabledBackgroundColor = CloudyGray,
+        ),
     ) {
         Text(
             modifier = Modifier.padding(horizontal = 20.dp),
-            text = text
+            text = text,
+            color = White,
+        )
+    }
+}
+
+
+@Composable
+fun PrimaryWhiteButton(
+    onClick: () -> Unit,
+    text: String,
+) {
+    Button(
+        modifier = Modifier.height(50.dp),
+        onClick = onClick,
+        shape = RoundedCornerShape(25.dp),
+        colors = ButtonDefaults.buttonColors(
+            backgroundColor = White,
+            disabledBackgroundColor = CloudyGray,
+        ),
+    ) {
+        Text(
+            modifier = Modifier.padding(horizontal = 20.dp),
+            text = text,
+            color = Black,
         )
     }
 }
