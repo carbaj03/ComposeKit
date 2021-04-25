@@ -8,9 +8,9 @@ import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.fintonic.composekit.theme.*
-import com.fintonic.composekit.theme.White
 
 @Composable
 fun SecondaryButton(
@@ -40,22 +40,11 @@ fun PrimaryBlueButton(
     text: String,
 ) {
     Button(
-        modifier = Modifier.height(50.dp),
+        style = PrimaryBlue,
         onClick = onClick,
-        shape = RoundedCornerShape(25.dp),
-        colors = ButtonDefaults.buttonColors(
-            backgroundColor = Blue,
-            disabledBackgroundColor = CloudyGray,
-        ),
-    ) {
-        Text(
-            modifier = Modifier.padding(horizontal = 20.dp),
-            text = text,
-            color = White,
-        )
-    }
+        text = text,
+    )
 }
-
 
 @Composable
 fun PrimaryWhiteButton(
@@ -63,18 +52,50 @@ fun PrimaryWhiteButton(
     text: String,
 ) {
     Button(
+        style = PrimaryWhite,
+        onClick = onClick,
+        text = text,
+    )
+}
+
+@Composable
+fun Button(
+    onClick: () -> Unit,
+    text: String,
+    style: Style,
+) {
+    Button(
         modifier = Modifier.height(50.dp),
         onClick = onClick,
         shape = RoundedCornerShape(25.dp),
         colors = ButtonDefaults.buttonColors(
-            backgroundColor = White,
-            disabledBackgroundColor = CloudyGray,
+            backgroundColor = style.backgroundColor,
+            disabledBackgroundColor = style.disabledBackgroundColor,
         ),
     ) {
         Text(
             modifier = Modifier.padding(horizontal = 20.dp),
             text = text,
-            color = Black,
+            color = style.textColor,
         )
     }
 }
+
+sealed class Style(
+    val backgroundColor: Color,
+    val disabledBackgroundColor: Color,
+    val textColor: Color
+)
+
+object PrimaryWhite : Style(
+    backgroundColor = White,
+    disabledBackgroundColor = CloudyGray,
+    textColor = Black
+)
+
+object PrimaryBlue : Style(
+    backgroundColor = Blue,
+    disabledBackgroundColor = CloudyGray,
+    textColor = White
+)
+
