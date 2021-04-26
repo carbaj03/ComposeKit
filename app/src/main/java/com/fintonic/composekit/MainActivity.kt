@@ -13,11 +13,11 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ComposeKitTheme {
+//            ComposeKitTheme {
                 Surface(color = MaterialTheme.colors.background) {
                     Navigator()
                 }
-            }
+//            }
         }
     }
 }

@@ -9,6 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
 import com.fintonic.composekit.theme.*
 
@@ -67,7 +68,7 @@ fun Button(
     Button(
         modifier = Modifier.height(50.dp),
         onClick = onClick,
-        shape = RoundedCornerShape(25.dp),
+        shape = style.shape,
         colors = ButtonDefaults.buttonColors(
             backgroundColor = style.backgroundColor,
             disabledBackgroundColor = style.disabledBackgroundColor,
@@ -81,21 +82,31 @@ fun Button(
     }
 }
 
+
 sealed class Style(
     val backgroundColor: Color,
     val disabledBackgroundColor: Color,
-    val textColor: Color
-)
+    val textColor: Color,
+    val shape: Shape,
+) {
+    companion object {
+        val shapeDefault = RoundedCornerShape(25.dp)
+    }
+}
 
 object PrimaryWhite : Style(
     backgroundColor = White,
     disabledBackgroundColor = CloudyGray,
-    textColor = Black
+    textColor = Black,
+    shape = shapeDefault
 )
 
 object PrimaryBlue : Style(
     backgroundColor = Blue,
     disabledBackgroundColor = CloudyGray,
-    textColor = White
+    textColor = White,
+    shape = shapeDefault
 )
+
+
 
