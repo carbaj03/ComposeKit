@@ -19,20 +19,10 @@ fun SecondaryButton(
     text: String,
 ) {
     Button(
-        modifier = Modifier.height(50.dp),
+        style = Secondary,
         onClick = onClick,
-        shape = RoundedCornerShape(25.dp),
-        colors = ButtonDefaults.buttonColors(
-            backgroundColor = Salmon,
-            disabledBackgroundColor = CloudyGray,
-        ),
-    ) {
-        Text(
-            modifier = Modifier.padding(horizontal = 20.dp),
-            text = text,
-            color = White,
-        )
-    }
+        text = text,
+    )
 }
 
 @Composable
@@ -108,5 +98,9 @@ object PrimaryBlue : Style(
     shape = shapeDefault
 )
 
-
-
+object Secondary : Style(
+    backgroundColor = Salmon,
+    disabledBackgroundColor = CloudyGray,
+    textColor = White,
+    shape = shapeDefault
+)

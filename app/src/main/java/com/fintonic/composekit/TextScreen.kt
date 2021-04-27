@@ -16,5 +16,6 @@ fun TextScreen() {
     ) {
         H1Black(text = "H1Black")
         H2Black(text = "H2Black")
+        H3Black(text = "H3Black")
     }
 }
