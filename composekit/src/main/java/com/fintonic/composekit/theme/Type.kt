@@ -52,5 +52,5 @@ val cerebriSansFamily: FontFamily =
 
 
 val FontWeight.Companion.Book get() = FontWeight(450)
-val FontWeight.Companion.Heavy get() = FontWeight.W900
-val FontWeight.Companion.Regular get() = FontWeight.W400
+val FontWeight.Companion.Heavy get() = W900
+val FontWeight.Companion.Regular get() = W400
