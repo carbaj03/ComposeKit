@@ -5,22 +5,31 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.fintonic.composekit.bubble.Bubble
+import com.fintonic.composekit.tag.Tag
 import com.fintonic.composekit.text.*
-import com.fintonic.composekit.text.style.DisplayBig
-import com.fintonic.composekit.text.style.DisplayPrimary
-import com.fintonic.composekit.text.style.DisplayWhite
+import com.fintonic.composekit.text.style.*
+import com.fintonic.composekit.theme.DslColor
 
 @Composable
 fun TextScreen() {
     Column(
         modifier = Modifier
             .padding(20.dp)
-            .fillMaxSize(),
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState()),
     ) {
+
+        Bubble(text = "sadf", backGroundColor = DslColor.Yellow)
+
+        Tag(text = "sadf", backGroundColor = DslColor.Yellow, borderColor = DslColor.Blue, textStyle = LinkWhite)
+
         H1Black(text = "H1Black")
         H1Gray(text = "H1Gray")
         Box(Modifier.background(Color.Black)) {
@@ -48,6 +57,12 @@ fun TextScreen() {
             DisplayWhite(text = DisplayWhite::class.simpleName.toString())
         }
         DisplayBig(text = DisplayBig::class.simpleName.toString())
+
+        NavBarActive(text = NavBarActive.toString())
+        NavBarInactive(text = NavBarInactive.toString())
+        Box(Modifier.background(Color.Black)) {
+            NavBarBubble(text = NavBarBubble.toString())
+        }
 
     }
 }
