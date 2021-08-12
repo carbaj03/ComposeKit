@@ -8,7 +8,11 @@ import com.fintonic.composekit.theme.cerebriSansFamily
 sealed class H1(
     fontWeight: FontWeight = FontWeight.Light,
     color: DslColor
-) : TextStyle(26.sp, fontWeight, cerebriSansFamily, color)
+) : TextStyle(Normal, fontWeight, cerebriSansFamily, color) {
+    companion object {
+        val Normal = 26.sp
+    }
+}
 
 object H1White : H1(
     color = DslColor.White,

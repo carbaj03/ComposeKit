@@ -3,19 +3,24 @@ package com.fintonic.composekit.text.style
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
-import com.fintonic.composekit.text.FontSize
 import com.fintonic.composekit.theme.DslColor
 import com.fintonic.composekit.theme.cerebriSansFamily
 
 
-private val FontSize.Companion.Normal: TextUnit get() = 24.sp
-private val FontSize.Companion.Big: TextUnit get() = 40.sp
-
 sealed class Display(
     color: DslColor,
-    fontSize: TextUnit = FontSize.Normal,
+    fontSize: TextUnit = Normal,
     fontWeight: FontWeight = FontWeight.SemiBold,
-) : TextStyle(fontSize, fontWeight, cerebriSansFamily, color)
+) : TextStyle(fontSize, fontWeight, cerebriSansFamily, color) {
+    companion object {
+        val Normal: TextUnit = 24.sp
+        val Big: TextUnit = 40.sp
+    }
+}
+
+object DisplayPrimary : Display(
+    color = DslColor.Navy,
+)
 
 object DisplayWhite : Display(
     color = DslColor.White,
@@ -23,5 +28,5 @@ object DisplayWhite : Display(
 
 object DisplayBig : Display(
     color = DslColor.Navy,
-    fontSize = FontSize.Big
+    fontSize = Big
 )

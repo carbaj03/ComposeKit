@@ -13,35 +13,21 @@ import com.fintonic.composekit.text.Text
 
 
 @Composable
-fun PrimaryBlueButton(
+fun ButtonPrimary(
     onClick: () -> Unit,
     text: String,
     fillMaxWith: Boolean = false,
 ) {
     Button(
         text = text,
-        style = PrimaryBlue,
+        style = Primary,
         onClick = onClick,
         fillMaxWith = fillMaxWith
     )
 }
 
 @Composable
-fun PrimaryWhiteButton(
-    onClick: () -> Unit,
-    text: String,
-    fillMaxWith: Boolean = false,
-) {
-    Button(
-        text = text,
-        style = PrimaryWhite,
-        onClick = onClick,
-        fillMaxWith = fillMaxWith
-    )
-}
-
-@Composable
-fun SecondaryButton(
+fun ButtonSecondary(
     onClick: () -> Unit,
     text: String,
     fillMaxWith: Boolean = false,
@@ -49,6 +35,20 @@ fun SecondaryButton(
     Button(
         text = text,
         style = Secondary,
+        onClick = onClick,
+        fillMaxWith = fillMaxWith
+    )
+}
+
+@Composable
+fun ButtonWhite(
+    onClick: () -> Unit,
+    text: String,
+    fillMaxWith: Boolean = false,
+) {
+    Button(
+        text = text,
+        style = White,
         onClick = onClick,
         fillMaxWith = fillMaxWith
     )

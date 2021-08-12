@@ -10,6 +10,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.fintonic.composekit.text.*
+import com.fintonic.composekit.text.style.DisplayBig
+import com.fintonic.composekit.text.style.DisplayPrimary
+import com.fintonic.composekit.text.style.DisplayWhite
 
 @Composable
 fun TextScreen() {
@@ -39,6 +42,12 @@ fun TextScreen() {
         Box(Modifier.background(Color.Black)) {
             H3White(text = "H3White")
         }
+
+        DisplayPrimary(text = DisplayPrimary::class.simpleName.toString())
+        Box(Modifier.background(Color.Black)) {
+            DisplayWhite(text = DisplayWhite::class.simpleName.toString())
+        }
+        DisplayBig(text = DisplayBig::class.simpleName.toString())
 
     }
 }

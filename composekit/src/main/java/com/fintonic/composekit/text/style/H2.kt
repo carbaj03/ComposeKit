@@ -1,6 +1,7 @@
 package com.fintonic.composekit.text.style
 
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 import com.fintonic.composekit.theme.Book
 import com.fintonic.composekit.theme.DslColor
@@ -9,7 +10,11 @@ import com.fintonic.composekit.theme.cerebriSansFamily
 sealed class H2(
     color: DslColor,
     fontWeight: FontWeight = FontWeight.Light,
-) : TextStyle(22.sp, fontWeight, cerebriSansFamily, color)
+) : TextStyle(Normal, fontWeight, cerebriSansFamily, color) {
+    companion object {
+        val Normal: TextUnit = 22.sp
+    }
+}
 
 object H2White : H2(color = DslColor.White)
 

@@ -19,14 +19,7 @@ sealed class ButtonStyle(
     }
 }
 
-object PrimaryWhite : ButtonStyle(
-    backgroundColor = DslColor.White,
-    disabledBackgroundColor = DslColor.CloudyGray,
-    shape = shapeDefault,
-    textStyle = LinkBlue
-)
-
-object PrimaryBlue : ButtonStyle(
+object Primary : ButtonStyle(
     backgroundColor = DslColor.Blue,
     disabledBackgroundColor = DslColor.CloudyGray,
     shape = shapeDefault,
@@ -38,4 +31,11 @@ object Secondary : ButtonStyle(
     disabledBackgroundColor = DslColor.CloudyGray,
     shape = shapeDefault,
     textStyle = LinkWhite
+)
+
+object White : ButtonStyle(
+    backgroundColor = DslColor.White,
+    disabledBackgroundColor = DslColor.CloudyGray,
+    shape = shapeDefault,
+    textStyle = LinkBlue
 )
