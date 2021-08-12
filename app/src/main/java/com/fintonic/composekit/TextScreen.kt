@@ -26,43 +26,55 @@ fun TextScreen() {
             .verticalScroll(rememberScrollState()),
     ) {
 
-        Bubble(text = "sadf", backGroundColor = DslColor.Yellow)
+        Bubble(
+            text = "Bubble",
+            backGroundColor = DslColor.Yellow
+        )
 
-        Tag(text = "sadf", backGroundColor = DslColor.Yellow, borderColor = DslColor.Blue, textStyle = LinkWhite)
+        Tag(
+            text = "Tag",
+            backGroundColor = DslColor.Yellow,
+            borderColor = DslColor.Blue,
+            textStyle = LinkWhite
+        )
 
-        H1Black(text = "H1Black")
-        H1Gray(text = "H1Gray")
+        H1Black(text = H1Black.name)
+        H1Gray(text = H1Gray.name)
         Box(Modifier.background(Color.Black)) {
-            H1White(text = "H1White")
+            H1White(text = H1White.name)
         }
 
-        H2Black(text = "H2Black")
-        H2Gray(text = "H2Gray")
-        H2Green(text = "H2Green")
-        H2Red(text = "H2Red")
-        H2White(text = "H2White")
-        H2BlackBook(text = "H2BlackBook")
+        H2Black(text = H2Black.name)
+        H2Gray(text = H2Gray.name)
+        H2Green(text = H2Green.name)
+        H2Red(text = H2Red.name)
+        H2White(text = H2White.name)
+        H2BlackBook(text = H2BlackBook.name)
 
-        H3Black(text = "H3Black")
-        H3Gray(text = " H3Gray")
-        H3Green(text = "H3Green")
-        H3Pink(text = "H3Pink")
-        H3Red(text = "H3Red")
+        H3Black(text = H3Black.name)
+        H3Gray(text = H3Gray.name)
+        H3Green(text = H3Green.name)
+        H3Pink(text = H3Pink.name)
+        H3Red(text = H3Red.name)
         Box(Modifier.background(Color.Black)) {
-            H3White(text = "H3White")
+            H3White(text = H3White.name)
         }
 
-        DisplayPrimary(text = DisplayPrimary::class.simpleName.toString())
+        DisplayPrimary(text = DisplayPrimary.name)
         Box(Modifier.background(Color.Black)) {
-            DisplayWhite(text = DisplayWhite::class.simpleName.toString())
+            DisplayWhite(text = DisplayWhite.name)
         }
-        DisplayBig(text = DisplayBig::class.simpleName.toString())
+        DisplayBig(text = DisplayBig.name)
 
-        NavBarActive(text = NavBarActive.toString())
-        NavBarInactive(text = NavBarInactive.toString())
+        NavBarActive(text = NavBarActive.name)
+        NavBarInactive(text = NavBarInactive.name)
         Box(Modifier.background(Color.Black)) {
-            NavBarBubble(text = NavBarBubble.toString())
+            NavBarBubble(text = NavBarBubble.name)
         }
 
     }
 }
+
+inline val <reified A> A.name: String
+    get() =
+        A::class.simpleName.toString()
