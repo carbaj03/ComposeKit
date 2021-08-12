@@ -1,78 +1,54 @@
 package com.fintonic.composekit.text
 
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.TextUnit
-import androidx.compose.ui.unit.sp
-import com.fintonic.composekit.theme.*
-
-private val FontSize.Companion.Small: TextUnit get() = 15.sp
-private val FontSize.Companion.Big: TextUnit get() = 17.sp
-
-@Composable
-fun Link(
-    text: String,
-    color: Color,
-    fontSize: TextUnit = FontSize.Small,
-    fontWeight: FontWeight = FontWeight.Book
-) {
-    Text(
-        text = text,
-        fontSize = fontSize,
-        fontWeight = fontWeight,
-        fontFamily = cerebriSansFamily,
-        color = color,
-    )
-}
+import com.fintonic.composekit.text.style.*
 
 
 @Composable
 fun LinkBlue(
     text: String,
 ) {
-    Link(text = text, color = Blue)
+    Text(text = text, style = LinkBlue)
 }
 
 @Composable
 fun LinkSecondary(
     text: String,
 ) {
-    Link(text = text, color = Fucsia)
+    Text(text = text, style = LinkSecondary)
 }
 
 @Composable
 fun LinkDisabled(
     text: String,
 ) {
-    Link(text = text, color = Gray)
+    Text(text = text, style = LinkDisabled)
 }
 
 @Composable
 fun LinkGreen(
     text: String,
 ) {
-    Link(text = text, color = Green)
+    Text(text = text, style = LinkGreen)
 }
 
 @Composable
 fun LinkWhite(
     text: String,
 ) {
-    Link(text = text, color = White)
+    Text(text = text, style = LinkWhite)
 }
 
 @Composable
 fun LinkWhiteBig(
     text: String,
 ) {
-    Link(text = text, color = White, fontSize = FontSize.Big)
+    Text(text = text, style = LinkWhiteBig)
 }
 
 @Composable
 fun LinkBlueBig(
     text: String,
 ) {
-    Link(text = text, color = Blue, fontSize = FontSize.Big)
+    Text(text = text, style = LinkBlueBig)
 }

@@ -4,6 +4,9 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.fintonic.composekit.button.PrimaryBlueButton
+import com.fintonic.composekit.button.PrimaryWhiteButton
+import com.fintonic.composekit.button.SecondaryButton
 
 object ButtonScreen {
     const val route = "Button"
@@ -18,8 +21,25 @@ fun ButtonScreen() {
     ) {
         PrimaryBlueButton(
             onClick = { },
-            text = "Click"
+            text = "Click",
         )
+
+        Row {
+            Box(modifier = Modifier.weight(1f)) {
+                PrimaryBlueButton(
+                    onClick = { },
+                    text = "Click",
+                    fillMaxWith = true
+                )
+            }
+            Box(modifier = Modifier.weight(1f)) {
+                PrimaryBlueButton(
+                    onClick = { },
+                    text = "Click",
+                    fillMaxWith = true
+                )
+            }
+        }
 
         Spacer(modifier = Modifier.height(8.dp))
 
@@ -36,11 +56,7 @@ fun ButtonScreen() {
         )
 
         Spacer(modifier = Modifier.height(8.dp))
-
-        Button(
-            style = PrimaryWhite,
-            onClick = { },
-            text = "PrimaryWhite",
-        )
     }
 }
+
+

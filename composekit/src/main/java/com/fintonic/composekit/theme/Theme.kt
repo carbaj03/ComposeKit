@@ -8,21 +8,21 @@ import androidx.compose.runtime.Composable
 
 
 private val BrandPalette = lightColors(
-    primary = Blue,
-    secondary = Salmon,
-    surface = White,
-    background = White,
+    primary = DslColor.Blue.color,
+    secondary = DslColor.Salmon.color,
+    surface = DslColor.White.color,
+    background = DslColor.White.color,
 )
 
 private val DarkColorPalette = darkColors(
-    primary = White,
-    secondary = Salmon,
+    primary = DslColor.White.color,
+    secondary = DslColor.Salmon.color,
 )
 
 private val LightColorPalette = lightColors(
-    primary = Blue,
-    primaryVariant = Blue,
-    secondary = Salmon,
+    primary = DslColor.Blue.color,
+    primaryVariant = DslColor.Blue.color,
+    secondary = DslColor.Salmon.color,
 )
 
 @Composable
