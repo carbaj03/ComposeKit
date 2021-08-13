@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/compose-model-1628793848952.xml" value="0.9420731707317073" />
+        <entry key="../../../../layout/compose-model-1628793874697.xml" value="0.9420731707317073" />
+        <entry key="../../../../layout/compose-model-1628793882449.xml" value="0.9420731707317073" />
+        <entry key="../../../../layout/compose-model-1628794422375.xml" value="0.9420731707317073" />
+        <entry key="../../../../layout/compose-model-1628794553021.xml" value="0.9420731707317073" />
+        <entry key="../../../../layout/compose-model-1628794728498.xml" value="0.9420731707317073" />
+        <entry key="../../../../layout/compose-model-1628794784324.xml" value="0.9420731707317073" />
+        <entry key="../../../../layout/compose-model-1628794853478.xml" value="0.9420731707317073" />
+        <entry key="../../../../layout/compose-model-1628795245037.xml" value="0.9420731707317073" />
+        <entry key="../../../../layout/compose-model-1628796024844.xml" value="0.75" />
+        <entry key="../../../../layout/compose-model-1628796991144.xml" value="0.9420731707317073" />
+        <entry key="../../../../layout/compose-model-1628828853193.xml" value="0.1" />
+        <entry key="../../../../layout/compose-model-1628828893525.xml" value="0.1" />
+        <entry key="../../../../layout/compose-model-1628829044258.xml" value="0.1" />
+        <entry key="../../../../layout/compose-model-1628829223316.xml" value="0.9420731707317073" />
+        <entry key="../../../../layout/compose-model-1628829254519.xml" value="0.9420731707317073" />
+        <entry key="../../../../layout/compose-model-1628829254522.xml" value="0.1" />
+        <entry key="../../../../layout/compose-model-1628829319410.xml" value="0.9420731707317073" />
+        <entry key="composekit/src/main/res/drawable/ic_amazon_background_transparent.xml" value="0.2861111111111111" />
+      </map>
+    </option>
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

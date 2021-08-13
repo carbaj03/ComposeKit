@@ -1,13 +1,14 @@
 package com.fintonic.composekit.button
 
 
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Button
+import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.OutlinedButton
+import androidx.compose.material.contentColorFor
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.fintonic.composekit.text.Text
 
@@ -16,13 +17,15 @@ import com.fintonic.composekit.text.Text
 fun ButtonPrimary(
     onClick: () -> Unit,
     text: String,
-    fillMaxWith: Boolean = false,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
 ) {
     Button(
         text = text,
         style = Primary,
         onClick = onClick,
-        fillMaxWith = fillMaxWith
+        enabled = enabled,
+        modifier = modifier,
     )
 }
 
@@ -30,13 +33,15 @@ fun ButtonPrimary(
 fun ButtonSecondary(
     onClick: () -> Unit,
     text: String,
-    fillMaxWith: Boolean = false,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
 ) {
     Button(
         text = text,
         style = Secondary,
         onClick = onClick,
-        fillMaxWith = fillMaxWith
+        enabled = enabled,
+        modifier = modifier,
     )
 }
 
@@ -44,13 +49,31 @@ fun ButtonSecondary(
 fun ButtonWhite(
     onClick: () -> Unit,
     text: String,
-    fillMaxWith: Boolean = false,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
 ) {
     Button(
         text = text,
         style = White,
         onClick = onClick,
-        fillMaxWith = fillMaxWith
+        enabled = enabled,
+        modifier = modifier,
+    )
+}
+
+@Composable
+fun ButtonGhostBlue(
+    onClick: () -> Unit,
+    text: String,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
+) {
+    Button(
+        text = text,
+        style = GhostBlue,
+        onClick = onClick,
+        enabled = enabled,
+        modifier = modifier,
     )
 }
 
@@ -59,23 +82,40 @@ internal fun Button(
     onClick: () -> Unit,
     text: String,
     style: ButtonStyle,
-    fillMaxWith: Boolean = false,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
 ) {
-    var modifier = Modifier.height(50.dp)
-    modifier = if (fillMaxWith) modifier.fillMaxWidth() else modifier
-    Button(
-        modifier = modifier,
+    OutlinedButton(
+        modifier = modifier
+            .requiredHeight(50.dp),
         onClick = onClick,
+        enabled = enabled,
         shape = style.shape,
         colors = ButtonDefaults.buttonColors(
             backgroundColor = style.backgroundColor.color,
+            contentColorFor(backgroundColor = style.backgroundColor.color),
             disabledBackgroundColor = style.disabledBackgroundColor.color,
         ),
     ) {
         Text(
             modifier = Modifier.padding(horizontal = 20.dp),
             text = text,
-            style = style.textStyle,
+            style = style.colorEnabled(enabled),
+            maxLines = 1,
+
         )
     }
+}
+
+@Preview
+@Composable
+fun Example() {
+    ButtonWhite(onClick = { /*TODO*/ }, text = "White")
+}
+
+
+@Preview
+@Composable
+fun Example2() {
+    ButtonWhite(onClick = { /*TODO*/ }, text = "White", enabled = false)
 }
