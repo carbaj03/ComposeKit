@@ -50,12 +50,15 @@ fun TextScreen() {
             H1White(text = H1White.name)
         }
 
-        H2Black(text = H2Black.name)
-        H2Gray(text = H2Gray.name)
-        H2Green(text = H2Green.name)
-        H2Red(text = H2Red.name)
-        H2White(text = H2White.name)
-        H2BlackBook(text = H2BlackBook.name)
+//        H2Black(text = H2Black.name)
+//        H2Gray(text = H2Gray.name)
+//        H2Green(text = H2Green.name)
+//        H2Red(text = H2Red.name)
+//        H2White(text = H2White.name)
+//        H2BlackBook(text = H2BlackBook.name)
+        subclasses<H2>().forEach {
+            Text(it.first, it.second)
+        }
 
         H3Black(text = H3Black.name)
         H3Gray(text = H3Gray.name)
@@ -78,6 +81,9 @@ fun TextScreen() {
             NavBarBubble(text = NavBarBubble.name)
         }
 
+        subclasses<Micro1>().forEach {
+            Text(it.first, it.second)
+        }
     }
 }
 

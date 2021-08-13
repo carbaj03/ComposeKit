@@ -18,7 +18,7 @@ sealed class Link(
     }
 }
 
-object LinkBlue : Link(color = DslColor.Blue)
+object LinkPrimary : Link(color = DslColor.Blue)
 
 object LinkSecondary : Link(color = DslColor.Fucsia)
 

@@ -5,8 +5,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.fintonic.composekit.text.style.LinkBlue
 import com.fintonic.composekit.text.style.LinkDisabled
+import com.fintonic.composekit.text.style.LinkPrimary
 import com.fintonic.composekit.text.style.LinkWhite
 import com.fintonic.composekit.text.style.TextStyle
 import com.fintonic.composekit.theme.DslColor
@@ -53,14 +53,14 @@ object Secondary : ButtonStyle(
 object White : ButtonStyle(
     backgroundColor = DslColor.White,
     shape = shapeDefault,
-    textStyle = LinkBlue,
+    textStyle = LinkPrimary,
     borderColor = DslColor.White,
 )
 
 object GhostBlue : ButtonStyle(
     backgroundColor = DslColor.Transparent,
     shape = shapeDefault,
-    textStyle = LinkBlue,
+    textStyle = LinkPrimary,
     borderColor = DslColor.Blue,
     disabledBackgroundColor = DslColor.White,
     disabledBorderColor = DslColor.LightGray
@@ -70,7 +70,7 @@ object GhostBlue : ButtonStyle(
 object GhostBlueSmall : ButtonStyle(
     backgroundColor = DslColor.Transparent,
     shape = shapeDefault,
-    textStyle = LinkBlue,
+    textStyle = LinkPrimary,
     borderColor = DslColor.Blue,
     disabledBackgroundColor = DslColor.White,
     disabledBorderColor = DslColor.LightGray,
@@ -80,6 +80,6 @@ object GhostBlueSmall : ButtonStyle(
 object Icon : ButtonStyle(
     backgroundColor = DslColor.Blue,
     shape = shapeIcon,
-    textStyle = LinkBlue,
+    textStyle = LinkPrimary,
     borderColor = DslColor.Blue,
 )

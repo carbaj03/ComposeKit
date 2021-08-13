@@ -11,7 +11,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.fintonic.composekit.text.Text
 import com.fintonic.composekit.text.style.Link
-import com.fintonic.composekit.text.style.LinkBlue
+import com.fintonic.composekit.text.style.LinkPrimary
 import com.fintonic.composekit.theme.DslColor
 
 @Composable
@@ -51,6 +51,6 @@ fun TagExample() {
         text = "example",
         backGroundColor = DslColor.White,
         borderColor = DslColor.Blue,
-        textStyle = LinkBlue
+        textStyle = LinkPrimary
     )
 }

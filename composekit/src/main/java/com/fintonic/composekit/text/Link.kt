@@ -5,10 +5,10 @@ import com.fintonic.composekit.text.style.*
 
 
 @Composable
-fun LinkBlue(
+fun LinkPrimary(
     text: String,
 ) {
-    Text(text = text, style = LinkBlue)
+    Text(text = text, style = LinkPrimary)
 }
 
 @Composable
