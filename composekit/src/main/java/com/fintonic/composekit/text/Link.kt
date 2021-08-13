@@ -50,5 +50,5 @@ fun LinkWhiteBig(
 fun LinkBlueBig(
     text: String,
 ) {
-    Text(text = text, style = LinkBlueBig)
+    Text(text = text, style = LinkPrimaryBig)
 }

@@ -56,9 +56,7 @@ fun TextScreen() {
 //        H2Red(text = H2Red.name)
 //        H2White(text = H2White.name)
 //        H2BlackBook(text = H2BlackBook.name)
-        subclasses<H2>().forEach {
-            Text(it.first, it.second)
-        }
+        showSubclasses<H2>()
 
         H3Black(text = H3Black.name)
         H3Gray(text = H3Gray.name)
@@ -81,9 +79,15 @@ fun TextScreen() {
             NavBarBubble(text = NavBarBubble.name)
         }
 
-        subclasses<Micro1>().forEach {
-            Text(it.first, it.second)
-        }
+        showSubclasses<Micro1>()
+        showSubclasses<Big>()
+    }
+}
+
+@Composable
+inline fun <reified A : TextStyle> showSubclasses() {
+    subclasses<A>().forEach {
+        Text(it.first, it.second)
     }
 }
 

@@ -33,7 +33,7 @@ object LinkWhiteBig : Link(
     fontSize = Big
 )
 
-object LinkBlueBig : Link(
+object LinkPrimaryBig : Link(
     color = DslColor.Blue,
     fontSize = Big
 )
