@@ -2,6 +2,7 @@ package com.fintonic.composekit.text
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextOverflow
 import com.fintonic.composekit.text.style.TextStyle
 
 @Composable
@@ -9,6 +10,7 @@ fun Text(
     text: String,
     style: TextStyle,
     modifier: Modifier = Modifier,
+    maxLines: Int = Int.MAX_VALUE,
 ) {
     androidx.compose.material.Text(
         modifier = modifier,
@@ -17,5 +19,7 @@ fun Text(
         fontWeight = style.fontWeight,
         fontFamily = style.fontFamily,
         color = style.color.color,
+        maxLines = maxLines,
+        overflow = TextOverflow.Ellipsis,
     )
 }
