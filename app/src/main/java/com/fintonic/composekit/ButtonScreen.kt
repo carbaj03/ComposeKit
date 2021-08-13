@@ -5,7 +5,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.fintonic.composekit.button.*
-import com.fintonic.composekit.theme.DslColor
 
 object ButtonScreen {
     const val route = "Button"
@@ -18,44 +17,78 @@ fun ButtonScreen() {
             .padding(20.dp)
             .fillMaxSize(),
     ) {
-        ButtonPrimary(
-            onClick = { },
-            text = "Click",
-        )
+        Row {
+
+            ButtonPrimary(
+                onClick = { },
+                text = Primary.name,
+            )
+            ButtonPrimary(
+                onClick = { },
+                text = Primary.name,
+                enabled = false
+            )
+        }
 
         Spacer(modifier = Modifier.height(8.dp))
 
-        ButtonWhite(
-            modifier = Modifier.height(100.dp),
-            onClick = { },
-            text = "Click"
-        )
+        Row {
+            ButtonWhite(
+                onClick = { },
+                text = "Click"
+            )
+            ButtonWhite(
+                onClick = { },
+                text = "Click",
+                enabled = false
+            )
+        }
 
         Spacer(modifier = Modifier.height(8.dp))
 
-        ButtonSecondary(
-            onClick = { },
-            text = "Click"
-        )
+        Row {
+            ButtonSecondary(
+                onClick = { },
+                text = "Click"
+            )
+            ButtonSecondary(
+                onClick = { },
+                text = "Click",
+                enabled = false
+            )
+        }
 
         Spacer(modifier = Modifier.height(8.dp))
 
-        ButtonGhostBlue(
-            onClick = { },
-            text = GhostBlue.name
-        )
+        Row {
+            ButtonGhostBlue(
+                onClick = { },
+                text = GhostBlue.name
+            )
+            ButtonGhostBlue(
+                onClick = { },
+                text = GhostBlue.name,
+                enabled = false
+            )
+            ButtonPrimarySmall(
+                onClick = { },
+                text = GhostBlueSmall.name,
+            )
+        }
 
-        ButtonArrow(
-            onClick = {},
-            tint = DslColor.Fucsia
-        )
+        Row {
+            ButtonArrow(onClick = {})
+            ButtonArrow(
+                onClick = {},
+                enabled = false,
+            )
+        }
 
         Row {
             ButtonGhostBlue(
                 modifier = Modifier
                     .weight(1f)
-                    .fillMaxWidth()
-                    .requiredHeight(90.dp),
+                    .fillMaxWidth(),
                 onClick = { },
                 text = GhostBlue.name + " sdafdsfasdfsdfdsf sadfdsf"
             )

@@ -1,6 +1,8 @@
 package com.fintonic.composekit.button
 
 
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.material.ButtonDefaults
@@ -78,6 +80,22 @@ fun ButtonGhostBlue(
 }
 
 @Composable
+fun ButtonPrimarySmall(
+    onClick: () -> Unit,
+    text: String,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
+) {
+    Button(
+        text = text,
+        style = GhostBlueSmall,
+        onClick = onClick,
+        enabled = enabled,
+        modifier = modifier,
+    )
+}
+
+@Composable
 internal fun Button(
     onClick: () -> Unit,
     text: String,
@@ -87,22 +105,23 @@ internal fun Button(
 ) {
     OutlinedButton(
         modifier = modifier
-            .requiredHeight(50.dp),
+            .requiredHeight(style.height),
         onClick = onClick,
         enabled = enabled,
         shape = style.shape,
+        contentPadding = PaddingValues(0.dp),
         colors = ButtonDefaults.buttonColors(
             backgroundColor = style.backgroundColor.color,
             contentColorFor(backgroundColor = style.backgroundColor.color),
             disabledBackgroundColor = style.disabledBackgroundColor.color,
         ),
+        border = BorderStroke(1.dp, style.borderColorEnabled(enabled).color)
     ) {
         Text(
             modifier = Modifier.padding(horizontal = 20.dp),
             text = text,
-            style = style.colorEnabled(enabled),
+            style = style.textColorEnabled(enabled),
             maxLines = 1,
-
         )
     }
 }

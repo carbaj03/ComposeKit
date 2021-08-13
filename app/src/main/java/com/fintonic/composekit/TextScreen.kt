@@ -28,7 +28,13 @@ fun TextScreen() {
 
         Bubble(
             text = "Bubble",
-            backGroundColor = DslColor.Yellow
+            backGroundColor = DslColor.YellowLight
+        )
+
+        Bubble(
+            text = "Bubble",
+            backGroundColor = DslColor.YellowLight,
+            active = false
         )
 
         Tag(

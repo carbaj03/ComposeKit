@@ -11,6 +11,7 @@ value class DslColor(val color: Color) {
         val Salmon: DslColor = DslColor(Color(0xFFFE666F))
         val Navy: DslColor = DslColor(Color(0xFF133273))
         val Yellow: DslColor = DslColor(Color(0xFFFFC442))
+        val YellowLight: DslColor = DslColor(Color(0xFFFDEECF))
         val Aquamarine: DslColor = DslColor(Color(0xFFBFF3F5))
         val Pink: DslColor = DslColor(Color(0xFFFFD5D7))
         val BabyBlue: DslColor = DslColor(Color(0xFFBED5FF))
