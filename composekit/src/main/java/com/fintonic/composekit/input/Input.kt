@@ -13,8 +13,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.focus.FocusRequester
-import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.unit.Dp
@@ -32,6 +30,7 @@ import com.fintonic.composekit.theme.DslColor
 @Composable
 fun InputText(
     text: String,
+    onTextChange: (String) -> Unit,
     label: String,
     modifier: Modifier = Modifier,
     subText: SubText? = null,
@@ -44,10 +43,6 @@ fun InputText(
 ) {
     var value by remember {
         mutableStateOf(text)
-    }
-
-    val focus by remember {
-        mutableStateOf(FocusRequester())
     }
 
     var focused by remember {
@@ -77,10 +72,9 @@ fun InputText(
 
                 BasicTextField(
                     modifier = modifier
-                        .focusRequester(focus)
                         .fillMaxWidth(),
                     value = value,
-                    onValueChange = { value = it },
+                    onValueChange = { value = it; onTextChange(it) },
                     textStyle = H3Black.textStyle(),
                     keyboardActions = keyboardActions,
                     keyboardOptions = keyboardOptions,
@@ -100,6 +94,7 @@ fun InputText(
                 Icon(
                     modifier = Modifier.clickable {
                         value = ""
+                        onTextChange("")
 //                        focus.requestFocus()
                     },
                     imageVector = Icons.Default.Clear,
