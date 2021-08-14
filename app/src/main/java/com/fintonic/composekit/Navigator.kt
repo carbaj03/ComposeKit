@@ -10,9 +10,9 @@ fun Navigator() {
     val navController = rememberNavController()
     NavHost(
         navController = navController,
-        startDestination = "components",
+        startDestination = ComponentsScreen.route,
     ) {
-        composable("components") {
+        composable(ComponentsScreen.route) {
             ComponentsScreen(
                 onClick = { navController.navigate(it) }
             )
@@ -20,8 +20,11 @@ fun Navigator() {
         composable(ButtonScreen.route) {
             ButtonScreen()
         }
-        composable("text") {
+        composable(TextScreen.route) {
             TextScreen()
+        }
+        composable(InputScreen.route) {
+            InputScreen()
         }
     }
 }

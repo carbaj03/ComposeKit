@@ -12,6 +12,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+object ComponentsScreen {
+    const val route = "components"
+}
+
 @Composable
 fun ComponentsScreen(
     onClick: (String) -> Unit
@@ -22,10 +26,10 @@ fun ComponentsScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .requiredHeight(50.dp)
+                    .clickable { onClick(ButtonScreen.route) },
             ) {
                 Box(contentAlignment = Alignment.Center) {
                     Text(
-                        modifier = Modifier.clickable { onClick("button") },
                         text = "Buttons"
                     )
                 }
@@ -35,14 +39,28 @@ fun ComponentsScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .requiredHeight(50.dp)
+                    .clickable { onClick(TextScreen.route) }
             ) {
                 Box(contentAlignment = Alignment.Center) {
                     Text(
-                        modifier = Modifier.clickable { onClick("text") },
                         text = "Text"
                     )
                 }
             }
+
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .requiredHeight(50.dp)
+                    .clickable { onClick(InputScreen.route) }
+            ) {
+                Box(contentAlignment = Alignment.Center) {
+                    Text(
+                        text = "Input"
+                    )
+                }
+            }
+
         }
     }
 }

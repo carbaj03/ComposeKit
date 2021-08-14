@@ -17,6 +17,12 @@ import com.fintonic.composekit.text.*
 import com.fintonic.composekit.text.style.*
 import com.fintonic.composekit.theme.DslColor
 
+
+object TextScreen {
+    const val route = "text"
+}
+
+
 @Composable
 fun TextScreen() {
     Column(
@@ -81,6 +87,7 @@ fun TextScreen() {
 
         showSubclasses<Micro1>()
         showSubclasses<Big>()
+        showSubclasses<Body>()
     }
 }
 
