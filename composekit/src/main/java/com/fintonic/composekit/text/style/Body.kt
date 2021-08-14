@@ -7,12 +7,14 @@ import com.fintonic.composekit.theme.DslColor
 import com.fintonic.composekit.theme.cerebriSansFamily
 
 
-private val FontSize.Companion.Normal: TextUnit get() = 18.sp
-
 sealed class Body(
     color: DslColor,
     fontWeight: FontWeight = FontWeight.Light,
-) : TextStyle(FontSize.Normal, fontWeight, cerebriSansFamily, color)
+) : TextStyle(Normal, fontWeight, cerebriSansFamily, color) {
+    companion object {
+        val Normal: TextUnit = 18.sp
+    }
+}
 
 object BodyWhite : Body(
     color = DslColor.White,
