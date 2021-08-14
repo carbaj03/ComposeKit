@@ -1,27 +1,43 @@
 package com.fintonic.composekit.text
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import com.fintonic.composekit.text.style.DisplayBig
 import com.fintonic.composekit.text.style.DisplayPrimary
 import com.fintonic.composekit.text.style.DisplayWhite
 
 @Composable
 fun DisplayPrimary(
-    text: String
+    text: String,
+    modifier: Modifier = Modifier
 ) {
-    Text(text = text, style = DisplayPrimary)
+    Text(
+        modifier = modifier,
+        text = text,
+        style = DisplayPrimary
+    )
 }
 
 @Composable
 fun DisplayWhite(
-    text: String
+    text: String,
+    modifier: Modifier = Modifier
 ) {
-    Text(text = text, style = DisplayWhite)
+    Text(
+        modifier = modifier,
+        text = text,
+        style = DisplayWhite
+    )
 }
 
 @Composable
 fun DisplayBig(
-    text: String
+    text: String,
+    modifier: Modifier = Modifier
 ) {
-    Text(text = text, style = DisplayBig)
+    Text(
+        modifier = modifier,
+        text = text,
+        style = DisplayBig
+    )
 }

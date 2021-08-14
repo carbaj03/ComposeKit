@@ -3,7 +3,6 @@ package com.fintonic.composekit.text.style
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
-import com.fintonic.composekit.text.FontSize
 import com.fintonic.composekit.theme.DslColor
 import com.fintonic.composekit.theme.cerebriSansFamily
 
