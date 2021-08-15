@@ -86,6 +86,7 @@ fun TextScreen() {
         }
 
         showSubclasses<Micro1>()
+        showSubclasses<Micro2>()
         showSubclasses<Big>()
         showSubclasses<Body>()
     }
