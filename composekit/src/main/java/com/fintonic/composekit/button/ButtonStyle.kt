@@ -66,7 +66,6 @@ object GhostBlue : ButtonStyle(
     disabledBorderColor = DslColor.LightGray
 )
 
-
 object GhostBlueSmall : ButtonStyle(
     backgroundColor = DslColor.Transparent,
     shape = shapeDefault,
