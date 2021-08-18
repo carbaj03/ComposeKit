@@ -3,11 +3,13 @@ package com.fintonic.composekit.button
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Icon
 import androidx.compose.material.OutlinedButton
 import androidx.compose.material.contentColorFor
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -20,6 +22,7 @@ fun ButtonPrimary(
     onClick: () -> Unit,
     text: String,
     modifier: Modifier = Modifier,
+    icon: @Composable () -> Unit = {},
     enabled: Boolean = true,
 ) {
     Button(
@@ -28,6 +31,7 @@ fun ButtonPrimary(
         onClick = onClick,
         enabled = enabled,
         modifier = modifier,
+        icon = icon,
     )
 }
 
@@ -36,6 +40,7 @@ fun ButtonSecondary(
     onClick: () -> Unit,
     text: String,
     modifier: Modifier = Modifier,
+    icon: @Composable () -> Unit = {},
     enabled: Boolean = true,
 ) {
     Button(
@@ -44,6 +49,7 @@ fun ButtonSecondary(
         onClick = onClick,
         enabled = enabled,
         modifier = modifier,
+        icon = icon,
     )
 }
 
@@ -52,6 +58,7 @@ fun ButtonWhite(
     onClick: () -> Unit,
     text: String,
     modifier: Modifier = Modifier,
+    icon: @Composable () -> Unit = {},
     enabled: Boolean = true,
 ) {
     Button(
@@ -60,6 +67,7 @@ fun ButtonWhite(
         onClick = onClick,
         enabled = enabled,
         modifier = modifier,
+        icon = icon,
     )
 }
 
@@ -68,6 +76,7 @@ fun ButtonGhostBlue(
     onClick: () -> Unit,
     text: String,
     modifier: Modifier = Modifier,
+    icon: @Composable () -> Unit = {},
     enabled: Boolean = true,
 ) {
     Button(
@@ -76,6 +85,7 @@ fun ButtonGhostBlue(
         onClick = onClick,
         enabled = enabled,
         modifier = modifier,
+        icon = icon,
     )
 }
 
@@ -84,6 +94,7 @@ fun ButtonPrimarySmall(
     onClick: () -> Unit,
     text: String,
     modifier: Modifier = Modifier,
+    icon: @Composable () -> Unit = {},
     enabled: Boolean = true,
 ) {
     Button(
@@ -92,6 +103,7 @@ fun ButtonPrimarySmall(
         onClick = onClick,
         enabled = enabled,
         modifier = modifier,
+        icon = icon,
     )
 }
 
@@ -101,6 +113,7 @@ internal fun Button(
     text: String,
     style: ButtonStyle,
     modifier: Modifier = Modifier,
+    icon: @Composable () -> Unit = {},
     enabled: Boolean = true,
 ) {
     OutlinedButton(
@@ -109,16 +122,17 @@ internal fun Button(
         onClick = onClick,
         enabled = enabled,
         shape = style.shape,
-        contentPadding = PaddingValues(0.dp),
+        contentPadding = PaddingValues(horizontal = 20.dp),
         colors = ButtonDefaults.buttonColors(
             backgroundColor = style.backgroundColor.color,
             contentColorFor(backgroundColor = style.backgroundColor.color),
             disabledBackgroundColor = style.disabledBackgroundColor.color,
         ),
-        border = BorderStroke(1.dp, style.borderColorEnabled(enabled).color)
+        border = BorderStroke(1.dp, style.borderColorEnabled(enabled).color),
     ) {
+        icon()
+
         Text(
-            modifier = Modifier.padding(horizontal = 20.dp),
             text = text,
             style = style.textColorEnabled(enabled),
             maxLines = 1,
@@ -137,4 +151,20 @@ fun Example() {
 @Composable
 fun Example2() {
     ButtonWhite(onClick = { /*TODO*/ }, text = "White", enabled = false)
+}
+
+@Preview
+@Composable
+fun Example3() {
+    ButtonWhite(
+        onClick = { /*TODO*/ },
+        text = "White",
+        enabled = false,
+        icon = {
+            Icon(
+                imageVector = Icons.Default.Add,
+                contentDescription = null // decorative element
+            )
+        }
+    )
 }
