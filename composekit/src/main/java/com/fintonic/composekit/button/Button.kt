@@ -72,6 +72,24 @@ fun ButtonWhite(
 }
 
 @Composable
+fun ButtonCloudyGray(
+    onClick: () -> Unit,
+    text: String,
+    modifier: Modifier = Modifier,
+    icon: @Composable () -> Unit = {},
+    enabled: Boolean = true,
+) {
+    Button(
+        text = text,
+        style = CloudyGray,
+        onClick = onClick,
+        enabled = enabled,
+        modifier = modifier,
+        icon = icon,
+    )
+}
+
+@Composable
 fun ButtonGhostBlue(
     onClick: () -> Unit,
     text: String,

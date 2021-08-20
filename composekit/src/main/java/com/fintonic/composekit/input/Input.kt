@@ -44,9 +44,6 @@ fun InputText(
     enabled: Boolean = true,
     readOnly: Boolean = false,
 ) {
-    var value by remember {
-        mutableStateOf(text)
-    }
 
     var focused by remember {
         mutableStateOf(false)
@@ -72,15 +69,15 @@ fun InputText(
                 modifier = modifier
                     .weight(1f)
             ) {
-                if (!focused && value.isBlank())
+                if (!focused && text.isBlank())
                     H3Gray(text = placeholder ?: label)
 
                 BasicTextField(
                     modifier = modifier
                         .fillMaxWidth()
                         .focusRequester(focusRequester),
-                    value = value,
-                    onValueChange = { value = it; onTextChange(it) },
+                    value = text,
+                    onValueChange = { onTextChange(it) },
                     textStyle = H3Black.textStyle(),
                     keyboardActions = keyboardActions,
                     keyboardOptions = keyboardOptions,
@@ -96,10 +93,9 @@ fun InputText(
                 )
             }
 
-            if (value.isNotBlank())
+            if (text.isNotBlank() || !readOnly && !enabled)
                 Icon(
                     modifier = Modifier.clickable {
-                        value = ""
                         onTextChange("")
                         focusRequester.requestFocus()
                     },

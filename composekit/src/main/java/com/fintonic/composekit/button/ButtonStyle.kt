@@ -57,6 +57,13 @@ object White : ButtonStyle(
     borderColor = DslColor.White,
 )
 
+object CloudyGray : ButtonStyle(
+    backgroundColor = DslColor.CloudyGray,
+    shape = shapeDefault,
+    textStyle = LinkPrimary,
+    borderColor = DslColor.CloudyGray,
+)
+
 object GhostBlue : ButtonStyle(
     backgroundColor = DslColor.Transparent,
     shape = shapeDefault,
