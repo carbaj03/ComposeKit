@@ -19,21 +19,25 @@ object InputScreen {
 fun InputScreen() {
     val localFocusManager = LocalFocusManager.current
 
+    var text by remember { mutableStateOf("") }
     var subText: SubText? by remember { mutableStateOf(null) }
+    var text1 by remember { mutableStateOf("") }
     var subText1: SubText? by remember { mutableStateOf(null) }
 
-    val onTextChange = { text: String ->
+    val onTextChange = { newText: String ->
+        text = newText
         subText = when {
-            text.isBlank() -> null
-            text.contains("a") -> SubText.Error("error")
+            newText.isBlank() -> null
+            newText.contains("a") -> SubText.Error("error")
             else -> SubText.Info("you couldn't ")
         }
     }
 
-    val onTextChange1 = { text: String ->
+    val onTextChange1 = { newText: String ->
+        text1 = newText
         subText1 = when {
-            text.isBlank() -> null
-            text.contains("b") -> SubText.Error("error")
+            newText.isBlank() -> null
+            newText.contains("b") -> SubText.Error("error")
             else -> SubText.Info("you couldn't ")
         }
     }
@@ -44,11 +48,10 @@ fun InputScreen() {
             .fillMaxSize(),
     ) {
         Row {
-
             InputText(
                 modifier = Modifier
                     .weight(1f),
-                text = "",
+                text = text1,
                 onTextChange = onTextChange1,
                 label = "label",
                 subText = subText1,
@@ -71,7 +74,7 @@ fun InputScreen() {
         }
 
         InputText(
-            text = "asf",
+            text = text,
             onTextChange = onTextChange,
             label = "label",
             subText = subText,

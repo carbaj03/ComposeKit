@@ -126,7 +126,7 @@ fun ButtonPrimarySmall(
 }
 
 @Composable
-internal fun Button(
+fun Button(
     onClick: () -> Unit,
     text: String,
     style: ButtonStyle,

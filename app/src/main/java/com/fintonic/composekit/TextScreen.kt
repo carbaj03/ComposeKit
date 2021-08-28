@@ -89,6 +89,7 @@ fun TextScreen() {
         showSubclasses<Micro2>()
         showSubclasses<Big>()
         showSubclasses<Body>()
+        showSubclasses<Link>()
     }
 }
 
@@ -100,5 +101,4 @@ inline fun <reified A : TextStyle> showSubclasses() {
 }
 
 inline val <reified A> A.name: String
-    get() =
-        A::class.simpleName.toString()
+    get() = A::class.simpleName.toString()

@@ -8,7 +8,8 @@ import com.fintonic.composekit.text.style.*
 @Composable
 fun H2Black(
     text: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    maxLines: Int = Int.MAX_VALUE,
 ) {
     Text(
         modifier = modifier,
@@ -20,7 +21,8 @@ fun H2Black(
 @Composable
 fun H2White(
     text: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    maxLines: Int = Int.MAX_VALUE,
 ) {
     Text(
         modifier = modifier,
@@ -32,7 +34,8 @@ fun H2White(
 @Composable
 fun H2Gray(
     text: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    maxLines: Int = Int.MAX_VALUE,
 ) {
     Text(
         modifier = modifier,

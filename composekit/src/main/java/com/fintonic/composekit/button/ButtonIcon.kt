@@ -25,7 +25,24 @@ fun ButtonArrow(
 ) {
     ButtonIcon(
         onClick = onClick,
-        icon = R.drawable.ic_amazon_background_transparent,
+        icon = R.drawable.ic_arrow_right_white,
+        style = Icon,
+        modifier = modifier,
+        enabled = enabled,
+        tint = tint
+    )
+}
+
+@Composable
+fun ButtonEdit(
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
+    tint: DslColor = DslColor.Unspecified
+) {
+    ButtonIcon(
+        onClick = onClick,
+        icon = R.drawable.ic_edit_white,
         style = Icon,
         modifier = modifier,
         enabled = enabled,
