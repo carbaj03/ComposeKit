@@ -58,6 +58,8 @@
         <entry key="../../../../layout/compose-model-1629301896271.xml" value="0.8758169934640523" />
         <entry key="../../../../layout/compose-model-1629431609047.xml" value="0.8627450980392157" />
         <entry key="composekit/src/main/res/drawable/ic_amazon_background_transparent.xml" value="0.2861111111111111" />
+        <entry key="composekit/src/main/res/drawable/ic_arrow_small_down.xml" value="0.1035" />
+        <entry key="composekit/src/main/res/drawable/ic_arrow_small_up.xml" value="0.1035" />
       </map>
     </option>
   </component>

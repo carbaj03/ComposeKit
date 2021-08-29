@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
+import com.fintonic.composekit.input.InputAction
 import com.fintonic.composekit.input.InputText
 import com.fintonic.composekit.input.SubText
 
@@ -48,15 +49,14 @@ fun InputScreen() {
             .fillMaxSize(),
     ) {
         Row {
-            InputText(
+            InputAction(
                 modifier = Modifier
                     .weight(1f),
                 text = text1,
                 onTextChange = onTextChange1,
-                label = "label",
+                action = { text1 += "a" },
+                label = "label1",
                 subText = subText1,
-                keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
-                keyboardActions = KeyboardActions(onNext = { localFocusManager.clearFocus() }),
             )
 
             Spacer(modifier = Modifier.width(20.dp))

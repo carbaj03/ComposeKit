@@ -2,6 +2,7 @@ package com.fintonic.composekit.input
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.focusable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardActions
@@ -17,18 +18,99 @@ import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.fintonic.composekit.R.drawable
 import com.fintonic.composekit.text.H3Gray
 import com.fintonic.composekit.text.InputError
 import com.fintonic.composekit.text.InputInfo
 import com.fintonic.composekit.text.Micro1BlackRegular
 import com.fintonic.composekit.text.style.H3Black
-import com.fintonic.composekit.text.style.Input
-import com.fintonic.composekit.text.style.InputError
-import com.fintonic.composekit.text.style.InputInfo
 import com.fintonic.composekit.theme.DslColor
 
+
+@Composable
+fun InputAction(
+    text: String,
+    onTextChange: (String) -> Unit,
+    label: String,
+    action: () -> Unit,
+    modifier: Modifier = Modifier,
+    subText: SubText? = null,
+    placeholder: String? = null,
+    maxLines: Int = Int.MAX_VALUE,
+) {
+
+    var focused by remember {
+        mutableStateOf(false)
+    }
+
+    val focusRequester = FocusRequester()
+
+    Column(
+        modifier = modifier
+            .defaultMinSize(minWidth = TextFieldDefaults.MinWidth)
+
+            .onFocusChanged { focused = it.isFocused }
+            .focusRequester(focusRequester)
+            .focusable(true)
+            .clickable {
+                action()
+                focusRequester.requestFocus()
+            }
+    ) {
+        Micro1BlackRegular(text = label)
+
+        Row {
+
+            Box(
+                modifier = modifier
+                    .weight(1f)
+            ) {
+                if (!focused && text.isBlank())
+                    H3Gray(text = placeholder ?: label)
+
+                BasicTextField(
+                    modifier = modifier
+                        .fillMaxWidth(),
+                    value = text,
+                    onValueChange = { onTextChange(it) },
+                    textStyle = H3Black.textStyle(),
+                    maxLines = maxLines,
+                    singleLine = maxLines == 1,
+                    enabled = false,
+                    readOnly = true,
+                    cursorBrush = SolidColor(DslColor.Blue.color),
+                )
+            }
+
+            Icon(
+                painter = if (focused) {
+                    painterResource(id = drawable.ic_arrow_small_up)
+                } else {
+                    painterResource(id = drawable.ic_arrow_small_down)
+                },
+                contentDescription = null
+            )
+        }
+
+        Spacer(modifier = Modifier.height(4.dp))
+
+        Divider(
+            Modifier
+                .height(Dp(0.5f))
+                .background(DslColor.Blue.color)
+        )
+
+        subText?.let {
+            when (it) {
+                is SubText.Error -> InputError(text = it.text)
+                is SubText.Info -> InputInfo(text = it.text)
+            }
+        }
+    }
+}
 
 @Composable
 fun InputText(
@@ -55,11 +137,6 @@ fun InputText(
         modifier = modifier
             .defaultMinSize(minWidth = TextFieldDefaults.MinWidth)
             .onFocusChanged { focused = it.isFocused }
-//            .clickable(
-//                interactionSource = MutableInteractionSource(),
-//                indication = null,
-//                onClick = { if (!focused) focused = true }
-//            )
     ) {
         Micro1BlackRegular(text = label)
 
@@ -86,10 +163,6 @@ fun InputText(
                     enabled = enabled,
                     readOnly = readOnly,
                     cursorBrush = SolidColor(DslColor.Blue.color),
-//            decorationBox =,
-//            interactionSource =,
-//            onTextLayout =,
-//            visualTransformation =,
                 )
             }
 
@@ -106,10 +179,16 @@ fun InputText(
 
         Spacer(modifier = Modifier.height(4.dp))
 
+        val color = when {
+            subText.isError() && focused -> DslColor.Red.color
+            focused -> DslColor.Blue.color
+            else -> DslColor.LightGray.color
+        }
+
         Divider(
             Modifier
-                .height(Dp(0.5f))
-                .background(DslColor.Blue.color)
+                .height(1f.dp)
+                .background(color)
         )
 
         subText?.let {
@@ -122,15 +201,18 @@ fun InputText(
 }
 
 
-sealed class SubText(
-    text: String,
-    style: Input
-) {
+sealed class SubText {
     data class Error(
         val text: String,
-    ) : SubText(text, InputError)
+    ) : SubText()
 
     data class Info(
         val text: String
-    ) : SubText(text, InputInfo)
+    ) : SubText()
+
+    fun isError(): Boolean =
+        this is Error
 }
+
+fun SubText?.isError(): Boolean =
+    this?.isError() ?: false
