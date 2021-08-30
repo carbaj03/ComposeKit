@@ -18,7 +18,9 @@ fun BodyWhite(
     Text(
         modifier = modifier,
         text = text,
-        style = BodyWhite
+        style = BodyWhite,
+        maxLines = maxLines,
+        textAlign = textAlign,
     )
 }
 
@@ -32,7 +34,9 @@ fun BodyBlack(
     Text(
         modifier = modifier,
         text = text,
-        style = BodyBlack
+        style = BodyBlack,
+        maxLines = maxLines,
+        textAlign = textAlign,
     )
 }
 
@@ -46,6 +50,8 @@ fun BodyGray(
     Text(
         modifier = modifier,
         text = text,
-        style = BodyGray
+        style = BodyGray,
+        maxLines = maxLines,
+        textAlign = textAlign,
     )
 }

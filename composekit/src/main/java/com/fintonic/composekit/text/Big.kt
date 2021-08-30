@@ -10,25 +10,31 @@ import com.fintonic.composekit.text.style.Big50
 @Composable
 fun Big33(
     text: String,
+    modifier: Modifier = Modifier,
+    maxLines: Int = Int.MAX_VALUE,
     textAlign: TextAlign? = null,
-    modifier: Modifier = Modifier
 ) {
     Text(
         modifier = modifier,
         text = text,
         style = Big33,
+        maxLines = maxLines,
+        textAlign = textAlign,
     )
 }
 
 @Composable
 fun Big50(
     text: String,
+    modifier: Modifier = Modifier,
+    maxLines: Int = Int.MAX_VALUE,
     textAlign: TextAlign? = null,
-    modifier: Modifier = Modifier
 ) {
     Text(
         modifier = modifier,
         text = text,
         style = Big50,
+        maxLines = maxLines,
+        textAlign = textAlign,
     )
 }
