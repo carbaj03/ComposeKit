@@ -10,7 +10,7 @@ import com.fintonic.composekit.theme.cerebriSansFamily
 sealed class H3(
     color: DslColor,
     fontWeight: FontWeight = FontWeight.Book,
-) : TextStyle(Normal, fontWeight, cerebriSansFamily, color) {
+) : TextStyle(fontWeight, cerebriSansFamily, color, Normal) {
     companion object {
         private val Normal = 18.sp
     }

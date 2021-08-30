@@ -9,7 +9,7 @@ import com.fintonic.composekit.theme.cerebriSansFamily
 sealed class Micro2(
     fontWeight: FontWeight = FontWeight.SemiBold,
     color: DslColor
-) : TextStyle(Normal, fontWeight, cerebriSansFamily, color) {
+) : TextStyle(fontWeight, cerebriSansFamily, color, Normal) {
     companion object {
         val Normal = 13.sp
     }

@@ -11,7 +11,7 @@ sealed class NavBar(
     color: DslColor,
     fontWeight: FontWeight = FontWeight.Book,
     fontSize: TextUnit = Normal,
-) : TextStyle(fontSize, fontWeight, cerebriSansFamily, color) {
+) : TextStyle(fontWeight, cerebriSansFamily, color, fontSize) {
     companion object {
         val Normal: TextUnit = 11.sp
         val Bubble: TextUnit = 10.sp

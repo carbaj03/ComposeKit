@@ -11,7 +11,7 @@ sealed class Display(
     color: DslColor,
     fontSize: TextUnit = Normal,
     fontWeight: FontWeight = FontWeight.SemiBold,
-) : TextStyle(fontSize, fontWeight, cerebriSansFamily, color) {
+) : TextStyle(fontWeight, cerebriSansFamily, color, fontSize) {
     companion object {
         val Normal: TextUnit = 24.sp
         val Big: TextUnit = 40.sp

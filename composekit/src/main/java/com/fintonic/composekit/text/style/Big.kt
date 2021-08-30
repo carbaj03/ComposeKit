@@ -11,7 +11,7 @@ sealed class Big(
     color: DslColor,
     fontSize: TextUnit = Normal,
     fontWeight: FontWeight = FontWeight.Light,
-) : TextStyle(fontSize, fontWeight, cerebriSansFamily, color) {
+) : TextStyle(fontWeight, cerebriSansFamily, color, fontSize) {
     companion object {
         val Normal = 33.sp
         val Extra = 50.sp

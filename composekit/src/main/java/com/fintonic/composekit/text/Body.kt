@@ -2,6 +2,7 @@ package com.fintonic.composekit.text
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import com.fintonic.composekit.text.style.BodyBlack
 import com.fintonic.composekit.text.style.BodyGray
 import com.fintonic.composekit.text.style.BodyWhite
@@ -10,7 +11,9 @@ import com.fintonic.composekit.text.style.BodyWhite
 @Composable
 fun BodyWhite(
     text: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    maxLines: Int = Int.MAX_VALUE,
+    textAlign: TextAlign? = null,
 ) {
     Text(
         modifier = modifier,
@@ -22,7 +25,9 @@ fun BodyWhite(
 @Composable
 fun BodyBlack(
     text: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    maxLines: Int = Int.MAX_VALUE,
+    textAlign: TextAlign? = null,
 ) {
     Text(
         modifier = modifier,
@@ -34,7 +39,9 @@ fun BodyBlack(
 @Composable
 fun BodyGray(
     text: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    maxLines: Int = Int.MAX_VALUE,
+    textAlign: TextAlign? = null,
 ) {
     Text(
         modifier = modifier,

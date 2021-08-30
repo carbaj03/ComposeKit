@@ -51,7 +51,6 @@ fun InputAction(
     Column(
         modifier = modifier
             .defaultMinSize(minWidth = TextFieldDefaults.MinWidth)
-
             .onFocusChanged { focused = it.isFocused }
             .focusRequester(focusRequester)
             .focusable(true)

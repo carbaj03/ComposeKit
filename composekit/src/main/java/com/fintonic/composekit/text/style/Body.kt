@@ -10,7 +10,7 @@ import com.fintonic.composekit.theme.cerebriSansFamily
 sealed class Body(
     color: DslColor,
     fontWeight: FontWeight = FontWeight.Light,
-) : TextStyle(Normal, fontWeight, cerebriSansFamily, color) {
+) : TextStyle(fontWeight = fontWeight, fontFamily = cerebriSansFamily, color = color, fontSize = Normal) {
     companion object {
         val Normal: TextUnit = 18.sp
     }

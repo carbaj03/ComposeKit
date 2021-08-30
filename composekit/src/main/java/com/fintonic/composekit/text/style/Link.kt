@@ -11,7 +11,7 @@ sealed class Link(
     color: DslColor,
     fontWeight: FontWeight = FontWeight.Book,
     fontSize: TextUnit = Small,
-) : TextStyle(fontSize, fontWeight, cerebriSansFamily, color) {
+) : TextStyle(fontWeight, cerebriSansFamily, color, fontSize) {
     companion object {
         val Small: TextUnit = 15.sp
         val Big: TextUnit = 17.sp

@@ -2,6 +2,7 @@ package com.fintonic.composekit.text
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import com.fintonic.composekit.text.style.H1Black
 import com.fintonic.composekit.text.style.H1Gray
 import com.fintonic.composekit.text.style.H1White
@@ -12,11 +13,14 @@ fun H1Black(
     text: String,
     modifier: Modifier = Modifier,
     maxLines: Int = Int.MAX_VALUE,
+    textAlign: TextAlign? = null,
 ) {
     Text(
         modifier = modifier,
         text = text,
-        style = H1Black
+        style = H1Black,
+        maxLines = maxLines,
+        textAlign = textAlign,
     )
 }
 
@@ -25,11 +29,14 @@ fun H1White(
     text: String,
     modifier: Modifier = Modifier,
     maxLines: Int = Int.MAX_VALUE,
+    textAlign: TextAlign? = null,
 ) {
     Text(
         modifier = modifier,
         text = text,
-        style = H1White
+        style = H1White,
+        maxLines = maxLines,
+        textAlign = textAlign,
     )
 }
 
@@ -38,11 +45,13 @@ fun H1Gray(
     text: String,
     modifier: Modifier = Modifier,
     maxLines: Int = Int.MAX_VALUE,
+    textAlign: TextAlign? = null,
 ) {
     Text(
         modifier = modifier,
         text = text,
         style = H1Gray,
-        maxLines = 1
+        maxLines = maxLines,
+        textAlign = textAlign,
     )
 }

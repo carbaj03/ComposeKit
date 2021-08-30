@@ -5,17 +5,10 @@ import androidx.compose.ui.unit.sp
 import com.fintonic.composekit.theme.DslColor
 import com.fintonic.composekit.theme.cerebriSansFamily
 
-
-inline fun <reified A> subclasses(): List<Pair<String, A>> =
-    A::class.sealedSubclasses
-        .filter { it.objectInstance != null }
-        .map { klass -> klass.simpleName.toString() to klass.objectInstance!! }
-
-
 sealed class Micro1(
     fontWeight: FontWeight = FontWeight.Light,
     color: DslColor
-) : TextStyle(Normal, fontWeight, cerebriSansFamily, color) {
+) : TextStyle(fontWeight, cerebriSansFamily, color, Normal) {
     companion object {
         val Normal = 15.sp
     }
