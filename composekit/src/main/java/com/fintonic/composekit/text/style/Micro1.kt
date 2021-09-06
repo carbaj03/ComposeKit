@@ -26,3 +26,7 @@ object Micro1Black : Micro1(
 object Micro1Gray : Micro1(
     color = DslColor.Gray,
 )
+
+object Micro1White : Micro1(
+    color = DslColor.White,
+)

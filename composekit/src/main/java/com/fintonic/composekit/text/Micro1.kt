@@ -6,6 +6,23 @@ import androidx.compose.ui.text.style.TextAlign
 import com.fintonic.composekit.text.style.Micro1Black
 import com.fintonic.composekit.text.style.Micro1BlackRegular
 import com.fintonic.composekit.text.style.Micro1Gray
+import com.fintonic.composekit.text.style.Micro1White
+
+@Composable
+fun Micro1White(
+    text: String,
+    modifier: Modifier = Modifier,
+    maxLines: Int = Int.MAX_VALUE,
+    textAlign: TextAlign? = null,
+) {
+    Text(
+        modifier = modifier,
+        text = text,
+        style = Micro1White,
+        maxLines = maxLines,
+        textAlign = textAlign,
+    )
+}
 
 
 @Composable

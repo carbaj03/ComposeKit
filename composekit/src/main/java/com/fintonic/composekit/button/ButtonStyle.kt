@@ -83,6 +83,14 @@ object GhostBlueSmall : ButtonStyle(
     height = Small,
 )
 
+object PrimarySmall : ButtonStyle(
+    backgroundColor = DslColor.Blue,
+    shape = shapeDefault,
+    textStyle = LinkWhite,
+    borderColor = DslColor.Blue,
+    height = Small,
+)
+
 object Icon : ButtonStyle(
     backgroundColor = DslColor.Blue,
     shape = shapeIcon,

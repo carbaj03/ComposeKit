@@ -117,6 +117,24 @@ fun ButtonPrimarySmall(
 ) {
     Button(
         text = text,
+        style = PrimarySmall,
+        onClick = onClick,
+        enabled = enabled,
+        modifier = modifier,
+        icon = icon,
+    )
+}
+
+@Composable
+fun ButtonGhostBlueSmall(
+    onClick: () -> Unit,
+    text: String,
+    modifier: Modifier = Modifier,
+    icon: @Composable () -> Unit = {},
+    enabled: Boolean = true,
+) {
+    Button(
+        text = text,
         style = GhostBlueSmall,
         onClick = onClick,
         enabled = enabled,
