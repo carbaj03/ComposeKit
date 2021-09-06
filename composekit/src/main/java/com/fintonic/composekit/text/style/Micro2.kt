@@ -27,6 +27,10 @@ object Micro2White : Micro2(
     color = DslColor.Gray,
 )
 
+object Micro2Navy : Micro2(
+    color = DslColor.Navy,
+)
+
 object Micro2BlackRegular : Micro2(
     color = DslColor.Gray,
     fontWeight = FontWeight.Normal,
