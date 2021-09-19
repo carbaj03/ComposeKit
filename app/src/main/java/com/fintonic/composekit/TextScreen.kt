@@ -31,7 +31,7 @@ fun TextScreen() {
             .fillMaxSize()
             .verticalScroll(rememberScrollState()),
     ) {
-        com.fintonic.composekit.text.BodyBlack(text = "sdfs adfasdf safs dafds fsda fs daf dsfa sf asfdsa fsaf as fs dfdsafafadsfsd", maxLines = 1)
+        BodyBlack(text = "sdfs adfasdf safs dafds fsda fs daf dsfa sf asfdsa fsaf as fs dfdsafafadsfsd", maxLines = 1)
 
         Bubble(
             text = "Bubble",

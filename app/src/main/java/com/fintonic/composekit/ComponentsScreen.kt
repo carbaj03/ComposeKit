@@ -7,11 +7,10 @@ import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Card
 import androidx.compose.material.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.fintonic.composekit.datepicker.DatePickerDialog
 
 object ComponentsScreen {
     const val route = "components"
@@ -62,24 +61,19 @@ fun ComponentsScreen(
                 }
             }
 
-            var dialog by remember {
-                mutableStateOf(false)
-            }
-
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
                     .requiredHeight(50.dp)
-                    .clickable { dialog = true }
+                    .clickable { onClick(CustomScreen.route) }
             ) {
                 Box(contentAlignment = Alignment.Center) {
                     Text(
-                        text = "Input"
+                        text = "Custom"
                     )
                 }
             }
 
-            DatePickerDialog(dialog, { dialog = it })
         }
     }
 }

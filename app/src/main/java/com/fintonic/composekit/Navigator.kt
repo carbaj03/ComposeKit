@@ -26,5 +26,8 @@ fun Navigator() {
         composable(InputScreen.route) {
             InputScreen()
         }
+        composable(CustomScreen.route) {
+            CustomScreen()
+        }
     }
 }

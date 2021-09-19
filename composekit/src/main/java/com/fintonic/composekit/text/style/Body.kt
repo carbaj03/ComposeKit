@@ -27,3 +27,7 @@ object BodyBlack : Body(
 object BodyGray : Body(
     color = DslColor.Gray,
 )
+
+object BodyBlue : Body(
+    color = DslColor.Blue,
+)
